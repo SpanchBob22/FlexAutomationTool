@@ -37,7 +37,7 @@
 
 1.  Клонуйте репозиторій:
     ```bash
-    git clone https://github.com/ВАШ_НІКНЕЙМ/FlexAutomator.git
+    git clone https://github.com/SpanchBob22/FlexAutomator.git
     ```
 2.  Відкрийте файл `FlexAutomator.sln` у Visual Studio 2022.
 3.  Переконайтеся, що встановлено .NET 8 SDK.
