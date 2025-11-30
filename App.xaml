@@ -1,0 +1,44 @@
+<Application x:Class="FlexAutomator.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             ShutdownMode="OnExplicitShutdown">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+               
+                <materialDesign:BundledTheme BaseTheme="Dark" PrimaryColor="BlueGrey" SecondaryColor="Lime" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign2.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+
+            <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#37474F"/>
+            <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="#455A64"/>
+            <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#263238"/>
+
+
+            <SolidColorBrush x:Key="SecondaryHueMidBrush" Color="#546E7A"/>
+            <SolidColorBrush x:Key="SecondaryHueLightBrush" Color="#78909C"/>
+            <SolidColorBrush x:Key="SecondaryHueDarkBrush" Color="#455A64"/>
+
+
+            <SolidColorBrush x:Key="MaterialDesignPaper" Color="#121212"/>
+
+
+            <SolidColorBrush x:Key="MaterialDesignCardBackground" Color="#1E1E1E"/>
+
+       
+            <SolidColorBrush x:Key="MaterialDesignBody" Color="#E0E0E0"/>
+
+
+            <LinearGradientBrush x:Key="AppBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#0F0F0F" Offset="0.0"/>
+                <GradientStop Color="#161616" Offset="1.0"/>
+            </LinearGradientBrush>
+
+ 
+            <SolidColorBrush x:Key="SubtleBorderBrush" Color="#333333"/>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

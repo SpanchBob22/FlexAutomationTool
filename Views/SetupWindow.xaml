@@ -1,0 +1,72 @@
+﻿<Window x:Class="FlexAutomator.Views.SetupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:viewModels="clr-namespace:FlexAutomator.ViewModels"
+        d:DataContext="{d:DesignInstance Type=viewModels:SetupViewModel}"
+        mc:Ignorable="d"
+        Title="Первинне налаштування" 
+        Width="550"
+        SizeToContent="Height"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource AppBackgroundBrush}"
+        TextElement.Foreground="{StaticResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+
+    <Grid Margin="32">
+        <StackPanel VerticalAlignment="Center">
+            <materialDesign:PackIcon Kind="DatabaseCogOutline" 
+                                   Width="56" Height="56" 
+                                   HorizontalAlignment="Center" 
+                                   Margin="0,0,0,16"
+                                   Foreground="{StaticResource MaterialDesignBody}"
+                                   Opacity="0.9"/>
+
+            <TextBlock Text="Ласкаво просимо!" 
+                       FontSize="24"
+                       FontWeight="SemiBold"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,12"/>
+
+            <TextBlock Text="Для початку роботи оберіть папку, де будуть зберігатися ваші сценарії та налаштування." 
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       Opacity="0.6"
+                       Margin="0,0,0,24"/>
+
+            <Grid Margin="0,0,0,32">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox Text="{Binding DbPath}"
+                         materialDesign:HintAssist.Hint="Шлях до папки даних"
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                         IsReadOnly="False"
+                         VerticalAlignment="Center"/>
+
+                <Button Grid.Column="1"
+                        Style="{StaticResource MaterialDesignIconForegroundButton}"
+                        Command="{Binding BrowseFolderCommand}"
+                        ToolTip="Обрати папку"
+                        Margin="8,0,0,0"
+                        Foreground="{StaticResource MaterialDesignBody}">
+                    <materialDesign:PackIcon Kind="FolderOpenOutline"/>
+                </Button>
+            </Grid>
+
+            <Button Content="Продовжити"
+                    Command="{Binding ConfirmCommand}"
+                    Style="{StaticResource MaterialDesignOutlinedButton}"
+                    HorizontalAlignment="Right"
+                    Width="160"
+                    Foreground="{StaticResource MaterialDesignBody}"
+                    BorderBrush="{StaticResource SubtleBorderBrush}"/>
+        </StackPanel>
+    </Grid>
+</Window>
